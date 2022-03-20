@@ -1,0 +1,30 @@
+{% extends 'accounts/profile.html' %}
+{% block body %}
+<div class="row" >
+  <center><h3 class=" indigo-text " >Donate</h3></center>
+  <div  class="col s8 l4 offset-l3">
+
+    <form action="/Donate_food/" method="POST">
+
+ 				<div class="input-field">
+ 					<i class="material-icons prefix"></i>
+ 					<input type="text" name="number" id="">
+ 					<label for="text">Enter your number </label>
+ 				</div>
+        <div class="input-field">
+ 					<i class="material-icons prefix"></i>
+ 					<input type="text" name="food" id="">
+ 					<label for="text">  your food amount </label>
+ 				</div>
+ 				<div class="input-field">
+ 					<i class="material-icons prefix"></i>
+ 					<textarea class="materialize-textarea" name="address"></textarea>
+ 					<label for="address">Enter your fine location/address</label>
+ 				</div>
+        <button type="submit" name="button" class="btn" style=" margin-left : 14%; " >Donate</button>
+ 			</form>
+      
+  </div>
+</div>
+
+{% endblock %}

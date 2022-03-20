@@ -1,0 +1,58 @@
+{% extends 'accounts/profile.html' %}
+{% block content %}
+<div class="container">
+
+  <table>
+        <thead>
+          <tr>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Amount</th>
+              <th>Address</th>
+              <th>Time</th>
+              <th>status</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for Details in details %}
+          <tr>
+            <td>{{ Details.user }}</td>
+            <td>{{ Details.phone }}</td>
+            <td>{{ Details.amount }}</td>
+            <td>{{ Details.Address }}</td>
+            <td>{{ Details.Donate_time }}</td>
+            <td>{{ Details.status }}</td>
+          </tr>
+
+            <div class="row">
+            <div class="row">
+            <div class="col s12 m6">
+           <div class="card teal lighten-1">
+           <div class="card-content white-text">
+          <span class="card-title">Admin Message</span>
+          <p>{{ Details.message }}</p>
+         </div>
+          <div class="card-action">
+           
+    {% endfor %}
+
+           </div>
+          </div>
+               </div>
+                 </div>
+                </div>
+               </div>
+                   </div>
+                    </div>    </div> </div>
+
+
+
+        </tbody>
+
+      </table>
+
+</div>
+
+{% endblock %}
