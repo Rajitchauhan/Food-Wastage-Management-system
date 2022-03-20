@@ -12,12 +12,7 @@ I developed a Food wastage management system in which user can request to donate
 I make divided the whole project into various python`s modules :
 
 ### Modules :
-#### - Registraions. 
-#### - Login.
-#### - User - Profile. 
-#### - Request making (Donate).
-#### - Check status.
-#### - Admin panel.
+#### - Registraions , Login , User - Profile , Request making (Donate) , Check status , Admin panel
 
 ### Version :
 #### Python 3.9.0
