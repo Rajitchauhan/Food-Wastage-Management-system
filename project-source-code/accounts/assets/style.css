@@ -1,0 +1,16 @@
+body{
+
+}
+header{
+		background: url('fbg.jpg');
+		background-size: cover;
+		background-position: center;
+		min-height: 900px;
+		max-height: 900px;
+  }
+
+
+
+ #profile{
+	 color: #fff;
+ }
