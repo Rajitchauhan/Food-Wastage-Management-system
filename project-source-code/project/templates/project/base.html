@@ -1,0 +1,325 @@
+{% load static  %}
+<html lang="en" dir="ltr">
+  <head>
+    <!-- for style css from static -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <!-- font awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style media="screen">
+.slider .indicators .indicator-item {
+   background-color: #666666;
+  border: 3px solid #ffffff;
+
+}
+.slider .indicators .indicator-item.active {
+  background-color: #ffffff;
+}
+.slider {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: url('/static/bg.jpg');
+
+}
+.slider .indicators {
+  bottom: 60px;
+  z-index: 100;
+  /* text-align: left; */
+}
+#btn{
+  border: 1px red solid;
+}
+
+@media screen and  (max-width: 670px){
+		header{
+			min-height: 500px;
+		}
+	}
+
+
+</style>
+  </head>
+  <body>
+    <!--  for cruosel -->
+    <!--
+    <div class="carousel carousel-slider center">
+    <div class="carousel-fixed-item center">
+      <a class="btn waves-effect white grey-text darken-text-2">button</a>
+    </div>
+    <div class="carousel-item red white-text" href="#one!">
+      <h2>First Panel</h2>
+      <p class="white-text">This is your first panel</p>
+    </div>
+    <div class="carousel-item amber white-text" href="#two!">
+      <h2>Second Panel</h2>
+      <p class="white-text">This is your second panel</p>
+    </div>
+    <div class="carousel-item green white-text" href="#three!">
+      <h2>Third Panel</h2>
+      <p class="white-text">This is your third panel</p>
+    </div>
+    <div class="carousel-item blue white-text" href="#four!">
+      <h2>Fourth Panel</h2>
+      <p class="white-text">This is your fourth panel</p>
+    </div>
+  </div>
+
+-->
+<!-- for image slider -->
+<!--
+<div class="slider">
+   <ul class="slides">
+     <li>
+       <img src="/static/bg.jpg">       random image
+       <div class="caption center-align">
+         <h3>This is our big Tagline!</h3>
+         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+       </div>
+     </li>
+     <li>
+       <img src="/static/bg.jpg">       random image
+       <div class="caption left-align">
+         <h3>Left Aligned Caption</h3>
+         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+       </div>
+     </li>
+     <li>
+         <img src="/static/bg.jpg">       random image
+       <div class="caption right-align">
+         <h3>Right Aligned Caption</h3>
+         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+       </div>
+     </li>
+     <li>
+       <img src="/static/bg.jpg">  random image
+       <div class="caption center-align">
+         <h3>This is our big Tagline!</h3>
+         <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+       </div>
+     </li>
+   </ul>
+ </div>
+-->
+
+<!--  image sllider -->
+
+
+
+<!-- for my nav -->
+
+<!-- for my nav -->
+<header>
+	<nav class="nav-wrapper transparent">
+        <div class="container">
+          <a href="#" class="brand-logo" style=" color:#ff5722; " >fwms</a>
+          <a href="#" class="sidenav-trigger" data-target="mobile-links">
+            <i class="material-icons">menu</i>
+          </a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+           {% if user.is_authenticated %}
+           <li><a href="{% url 'profile' %}" class="btn transparent red-text" id="btn">Profile</a></li>
+           <li><a href="{% url 'logout' %}" class="btn transparent red-text" id="btn">LogOut</a></li>
+           {% else %}
+
+            <li><a href="{% url 'login' %}" class="btn transparent red-text" id="btn">Login</a></li>
+            <li><a href="{% url 'register' %}" class="btn transparent red-text" id="btn">Register</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+			<!-- for mobile View -->
+  <ul class="sidenav" id="mobile-links">
+   <li><a href="{% url 'base' %}" >Home</a></li>
+   <li><a href="">About</a></li>
+   {% if user.is_authenticated %}
+   <li><a href="{% url 'profile' %}">Profile</a></li>
+   <li><a href="{% url 'logout' %}">LogOut</a></li>
+   {% else %}
+   <li><a href="{% url 'login' %}">Login</a></li>
+   <li><a href="{% url 'register' %}">Register</a></li>
+    {% endif %}
+ </ul>
+<!-- for my slogels  -->
+
+
+<div class="caption left-align" style=" margin-top : 15%; margin-left : 10%; ">
+	<h3 class="white-text">Food Wastage </h3>
+	<h5 class="light grey-text text-lighten-3">Eat to live , Don`t live to eat , Don`t Waste Food</h5>
+</div>
+
+
+</header>
+
+
+
+
+<!-- for my nav -->
+
+
+      {% block body %}
+      {% endblock %}
+
+
+    <!--  for photo and grid -->
+<section class="container section" id="photo's">
+ <div class="row">
+ 	<div class="col s12 l4">
+ 		<img src="/static/b.jpg" class="responsive-img  materialboxed">
+ 	</div>
+ 	<div class="col s12 l6 offset-l1">
+ 		<h3 class="indigo-text text-darken-4">Existing System</h3
+ 			><p>In existing system  if  anyone have extra food because of  any function or in their home it will be become waste  because  instantly there is no way to share with anyone  if they are having lots of food . even if they want to give that extra food to any orphanage or poor people they don’t have time or don’t have an idea about that
+So that we have create a application for sponsor that extra food  to poor people or nearby orphanage.
+
+</p>
+ 	</div>
+ 	<div class="col s12 l4 push-l7">
+ 		<img src="/static/c.jpg" class="responsive-img materialboxed">
+ 	</div>
+ 	<div class="col s12 l6 pull-l5 right-align offset-l1">
+ 		<h3 class="indigo-text text-darken-4">Proposed System</h3
+ 			><p>In proposed system we are reduce that food wastage using that application.
+This project is food redistribution is an enormously successful social innovation that tackles food waste and food poverty. the admin collect foods from donator through their nearby agent then provide to nearest orphanages or poor people. After receiving the food from the agent by admin and give alert message to that donator through this way we can reduce food wastage problem..
+</p>
+ 	</div>
+ 	<div class="col s12 l4">
+ 		<img src="/static/a.jpg" class="responsive-img   materialboxed">
+ 	</div>
+ 	<div class="col s12 l6 offset-l1">
+ 		<h3 class="indigo-text text-darken-4">Avoid Food Wastage</h3
+ 			><p>The Avoid Food Wastage project can be efficiently used by to donate the waste food.
+        The donator donate the food by adding the information about in this site.The admin maintain the donator details as well as the agent details.The admin send the donator details to the agent.
+        The agent collect the food from the donator and to give the nearest orphanage.
+</p>
+ 	</div>
+ </div>
+</section>
+
+<!-- for  parallax -->
+<div class="parallax-container">
+	<div class="parallax">
+		<img src="/static/para.jpg" class="responsive-img">
+	</div>
+</div>
+
+
+<!-- for services / tab -->
+<section class="container section" id="service">
+	<div class="row">
+		<div class="col s12 l4">
+			<h3 class="indigo-text text-darken-4">Get in Touch</h3>
+			<p> The donator can create the account and whenever they are having wastage food they can login and give request to the admin. And the admin also maintain the buyer(orphanage,poor people,..) details too.
+         After the admin view the donator request and give the alert message like time to come and collect the food.
+</p>
+			<p>And the admin collect foods from donator through their nearby agent then provide to nearest orphanages or poor people.
+         After receiving the food from the agent by admin and give alert message to that donator.
+
+</p>
+		</div>
+	<div class="col s12 l6 offset-l2">
+		<ul class="tabs">
+			<li class="tab col s6">
+				<a href="#Photography" class="indigo-text text-darken-4">LOGIN</a>
+			</li>
+			<li class="tab col s6">
+				<a href="#Editing" class="indigo-text text-darken-4">AGENT LOGIN</a>
+			</li>
+		</ul>
+		<div class="col s12" id="Photography">
+			<p class="flow-text indigo-text text-darken-4  ">Let`s Start</p>
+			 <form class="" method="post">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button type="submit" name="button" class="btn green">Submit</button>
+       </form>
+		</div>
+		<div class="col s12" id="Editing">
+			<p class="flow-text indigo-text text-darken-4  ">Agent_Login</p>
+      <form action="/Agent_login/" method="POST" >
+ 				<div class="input-field">
+ 					<i class="material-icons prefix">account_box</i>
+ 					<input type="text" name="Aname" id="">
+ 					<label for="name">Your User Name </label>
+ 				</div>
+ 				<div class="input-field">
+ 					<i class="material-icons prefix">lock_outline</i>
+ 				<input type="password" name="Apassword" value="">
+ 					<label for="password">Your password</label>
+           <button type="submit" name="button" class="btn " style="margin-left : 10%; margin-top: 2%;">LOGIN</button>
+
+ 				</div>
+
+ 			</form>
+
+		</div>
+	</div>
+	</div>
+</section>
+
+
+
+ <!-- for form -->
+
+<!-- for footer -->
+<footer class="page-footer transparent blue darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>About Me</h5>
+          <p>This project  is used to manage wastage foods in a useful way. Every day the people are wasting lots of foods. So we have to reduce that food wastage problem  through online. If anyone have wastage foods they are entering their food quantity details and their address in that application and then the admin maintain the details of food donator.</p>
+          <p>This project is food redistribution is an enormously successful social innovation that tackles food waste and food poverty. The user’s details are maintained confidential because it maintains a separate account for each user.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Linked In</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2022 Food Wastage Managment System</div>
+    </div>
+  </footer>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $('.sidenav').sidenav();
+      $('.materialboxed').materialbox();
+      $('.parallax').parallax();
+      $('.tabs').tabs();
+      $('.slider').slider();
+
+      $('.datepicker').datepicker({
+
+
+      });
+      $('.carousel.carousel-slider').carousel({
+      fullWidth: true,
+      indicators: true
+    });
+    });
+
+  </script>
+
+
+  </body>
+</html>
