@@ -7,7 +7,7 @@ Food waste management in India is becoming a critical problem due to the continu
 (Ref : https://www.avristech.com/food-waste-management-in-india/
 
 ### Objective : To reduce the food wastage 
-### " Technology is changing the life to people positively ".
+### " Technology is changing the life of people positively ".
 I developed a Food wastage management system in which user can request to donate the food .
 I divided the whole project into various python`s modules :
 
